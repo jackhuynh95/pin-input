@@ -3,6 +3,7 @@ const router = useRouter()
 const route = useRoute('/hi/[name]')
 const user = useUserStore()
 const { t } = useI18n()
+const [isSceretMode] = useToggle(false)
 
 // eslint-disable-next-line no-alert
 const onCompleted = (val: string) => window.alert(val)
@@ -25,7 +26,14 @@ watchEffect(() => {
       <em>{{ t('intro.pin-input') }}</em>
     </p>
 
-    <ThePINInput model-value="12345" :length="5" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
+    <ThePINInput model-value="12345" :length="5" :secure="isSceretMode" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
+
+    <button
+      m="3 t6" text-sm btn
+      @click="isSceretMode = !isSceretMode"
+    >
+      Sceret Mode: {{ isSceretMode ? 'On' : 'Off' }}
+    </button>
 
     <template v-if="user.otherNames.length">
       <p mt-4 text-sm>

@@ -5,7 +5,7 @@ const props = withDefaults(defineProps<Props>(), {
   length: 4,
   autofocus: true,
   secure: false,
-  characterPreview: true,
+  characterPreview: false,
   charPreviewDuration: 300,
   blurOnComplete: false,
 })

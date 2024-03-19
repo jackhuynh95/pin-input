@@ -32,6 +32,10 @@ export function usePinCode(props: Props, { emit }: { emit: void }) {
     reset()
   })
 
+  watch(() => props.secure, () => {
+    switchToSecure()
+  })
+
   watch(pinCodeComputed, (val, oldVal) => {
     emit('update:modelValue', val)
     if (oldVal.length !== props.length && val.length === props.length) {
@@ -56,6 +60,12 @@ export function usePinCode(props: Props, { emit }: { emit: void }) {
       setCellInputType(key, inputType)
       setCellWatcher(key)
     }
+  }
+
+  function switchToSecure() {
+    const inputType = getRelevantInputType()
+    for (let key = 0; key < (props?.length || 0); key += 1)
+      setCellInputType(key, inputType)
   }
 
   function setCellObject(key: number) {
