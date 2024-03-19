@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+  <video src='https://github.com/jackhuynh95/pin-input/assets/26354519/ac3f8525-f2c4-4806-b355-1278aa57fcdd' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
 </p>
 
 <p align='center'>
@@ -9,7 +9,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 <br>
 
 <p align='center'>
-<a href="https://vitesse.netlify.app/">Live Demo</a>
+<a href="https://pin-input-two.vercel.app/">Live Demo</a>
 </p>
 
 <br>
