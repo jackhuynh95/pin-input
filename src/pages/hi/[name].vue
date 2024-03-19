@@ -4,6 +4,9 @@ const route = useRoute('/hi/[name]')
 const user = useUserStore()
 const { t } = useI18n()
 
+// eslint-disable-next-line no-alert
+const onCompleted = (val: string) => window.alert(val)
+
 watchEffect(() => {
   user.setNewName(route.params.name)
 })
@@ -22,7 +25,7 @@ watchEffect(() => {
       <em>{{ t('intro.pin-input') }}</em>
     </p>
 
-    <ThePINInput model-value="12345" :length="5" text-sm opacity-75 />
+    <ThePINInput model-value="12345" :length="5" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
 
     <template v-if="user.otherNames.length">
       <p mt-4 text-sm>
