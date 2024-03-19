@@ -5,8 +5,10 @@ const user = useUserStore()
 const { t } = useI18n()
 const [isSceretMode] = useToggle(false)
 
-// eslint-disable-next-line no-alert
-const onCompleted = (val: string) => window.alert(val)
+function onCompleted(val: string) {
+  // eslint-disable-next-line no-alert
+  val !== '12345' && window.alert(val)
+}
 
 watchEffect(() => {
   user.setNewName(route.params.name)
