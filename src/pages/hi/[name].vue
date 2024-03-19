@@ -22,7 +22,7 @@ watchEffect(() => {
       <em>{{ t('intro.pin-input') }}</em>
     </p>
 
-    <ThePINInput model-value="12345" text-sm opacity-75 />
+    <ThePINInput model-value="12345" :length="5" text-sm opacity-75 />
 
     <template v-if="user.otherNames.length">
       <p mt-4 text-sm>

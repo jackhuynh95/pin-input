@@ -2,7 +2,7 @@
 import type { Props } from '~/types/props'
 
 const props = withDefaults(defineProps<Props>(), {
-  length: 5,
+  length: 4,
   autofocus: true,
   secure: false,
   characterPreview: true,
