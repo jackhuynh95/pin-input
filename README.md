@@ -3,6 +3,10 @@
 </p>
 
 <p align='center'>
+  <image src='https://github.com/jackhuynh95/pin-input/assets/26354519/2176e120-e2d3-4e51-ba45-f35f8650d58a' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+</p>
+
+<p align='center'>
 Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 </p>
 
