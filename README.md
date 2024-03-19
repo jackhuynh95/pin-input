@@ -3,7 +3,7 @@
 </p>
 
 <p align='center'>
-  <image src='https://github.com/jackhuynh95/pin-input/assets/26354519/2176e120-e2d3-4e51-ba45-f35f8650d58a' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+  <image src='https://github.com/jackhuynh95/pin-input/assets/26354519/608377e8-4c62-446b-a3e5-edb8d025f193' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
 </p>
 
 <p align='center'>
