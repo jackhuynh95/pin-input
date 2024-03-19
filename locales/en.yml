@@ -8,6 +8,7 @@ button:
 intro:
   desc: Opinionated Vite Starter Template
   dynamic-route: Demo of dynamic route
+  pin-input: Demo of PIN Input
   hi: Hi, {name}!
   aka: Also known as
   whats-your-name: What's your name?

@@ -18,8 +18,12 @@ watchEffect(() => {
       {{ t('intro.hi', { name: user.savedName }) }}
     </p>
 
+    <p mb-5 text-sm opacity-75>
+      <em>{{ t('intro.pin-input') }}</em>
+    </p>
+
     <p text-sm opacity-75>
-      <em>{{ t('intro.dynamic-route') }}</em>
+      PIN Input
     </p>
 
     <template v-if="user.otherNames.length">
