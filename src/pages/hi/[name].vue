@@ -3,7 +3,9 @@ const router = useRouter()
 const route = useRoute('/hi/[name]')
 const user = useUserStore()
 const { t } = useI18n()
+const { count, inc, dec } = useCounter(5, { min: 5, max: 10 })
 const [isSceretMode] = useToggle(false)
+const [isRender] = useToggle(true)
 
 function onCompleted(val: string) {
   // eslint-disable-next-line no-alert
@@ -13,6 +15,15 @@ function onCompleted(val: string) {
 watchEffect(() => {
   user.setNewName(route.params.name)
 })
+
+watchDebounced(count, () => {
+  isRender.value = false
+
+  // delay time 500ms
+  setTimeout(() => {
+    isRender.value = true
+  }, 500)
+}, { debounce: 500, maxWait: 1000 })
 </script>
 
 <template>
@@ -28,14 +39,35 @@ watchEffect(() => {
       <em>{{ t('intro.pin-input') }}</em>
     </p>
 
-    <ThePINInput model-value="12345" :length="5" :secure="isSceretMode" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
+    <ThePINInput v-if="isRender" model-value="12345" :length="count" :secure="isSceretMode" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
+    <ThePINInput v-else model-value="" :length="count" :secure="true" pointer-events-none text-sm opacity-75 />
 
+    <!-- Secret Mode -->
     <div>
       <button
         m="3 t6" text-sm btn
         @click="isSceretMode = !isSceretMode"
       >
         Sceret Mode: {{ isSceretMode ? 'On' : 'Off' }}
+      </button>
+    </div>
+
+    <!-- Counter -->
+    <div flex-inline items-center>
+      <button
+        m="3 t6" text-sm btn
+        @click="() => dec()"
+      >
+        -
+      </button>
+      <button m="3 t6" text-sm btn :disabled="true">
+        {{ count }}
+      </button>
+      <button
+        m="3 t6" text-sm btn
+        @click="() => inc(1)"
+      >
+        +
       </button>
     </div>
 
