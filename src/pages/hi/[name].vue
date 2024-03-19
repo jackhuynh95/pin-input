@@ -30,12 +30,14 @@ watchEffect(() => {
 
     <ThePINInput model-value="12345" :length="5" :secure="isSceretMode" :blur-on-complete="true" text-sm opacity-75 @completed="onCompleted" />
 
-    <button
-      m="3 t6" text-sm btn
-      @click="isSceretMode = !isSceretMode"
-    >
-      Sceret Mode: {{ isSceretMode ? 'On' : 'Off' }}
-    </button>
+    <div>
+      <button
+        m="3 t6" text-sm btn
+        @click="isSceretMode = !isSceretMode"
+      >
+        Sceret Mode: {{ isSceretMode ? 'On' : 'Off' }}
+      </button>
+    </div>
 
     <template v-if="user.otherNames.length">
       <p mt-4 text-sm>
